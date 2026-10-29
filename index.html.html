@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>tec - future</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Share+Tech+Mono&display=swap">
+<style>
+:root{--bg:#e6e6e6;--card:#f3f3f3;--ink:#111;--muted:#555;--line:#9a9a9a;--on:#e6e6e6;
+--hd:Orbitron,"Segoe UI",system-ui,sans-serif;--mono:"Share Tech Mono","Courier New",monospace;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121212;--card:#1b1b1b;--ink:#ececec;--muted:#a8a8a8;--line:#555;--on:#121212}}
+:root[data-theme="dark"]{--bg:#121212;--card:#1b1b1b;--ink:#ececec;--muted:#a8a8a8;--line:#555;--on:#121212}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--mono);line-height:1.6;
+background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:48px 48px;background-position:-1px -1px;background-blend-mode:soft-light}
+a{color:inherit}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:2px solid var(--ink);z-index:5}
+nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 20px;max-width:1000px;margin:0 auto;flex-wrap:wrap}
+.logo{font-family:var(--hd);font-weight:700;text-decoration:none;letter-spacing:.08em;text-transform:uppercase}
+.logo svg{height:42px;width:auto;display:block}
+nav .links{display:flex;gap:16px;flex-wrap:wrap;font-size:.85rem;text-transform:uppercase}
+nav .links a{text-decoration:none;color:var(--muted)}
+nav .links a:hover{color:var(--ink);text-decoration:underline}
+.pill{display:inline-block;border:1.5px solid var(--ink);border-radius:999px;padding:3px 16px;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;background:var(--bg)}
+.hero{padding:56px 0 50px;display:grid;grid-template-columns:1.4fr 1fr;gap:30px;align-items:center}
+.hero h1{font-family:var(--hd);font-size:clamp(1.9rem,5vw,3.2rem);line-height:1.12;margin:16px 0;text-transform:uppercase;letter-spacing:.02em}
+.hero p{color:var(--muted);font-size:1.02rem;max-width:520px}
+.btn{display:inline-block;margin-top:18px;padding:11px 22px;background:var(--ink);color:var(--on);text-decoration:none;font-family:var(--mono);text-transform:uppercase;letter-spacing:.1em;border:2px solid var(--ink)}
+.btn:hover{background:transparent;color:var(--ink)}
+.frame{position:relative;padding:26px;display:flex;justify-content:center;background:radial-gradient(circle,transparent 38%,var(--line) 39%,transparent 40%,transparent 58%,var(--line) 59%,transparent 60%)}
+.frame::before,.frame::after,.frame i::before,.frame i::after{content:"";position:absolute;width:26px;height:26px;border:4px solid var(--ink)}
+.frame::before{top:0;left:0;border-right:0;border-bottom:0}.frame::after{top:0;right:0;border-left:0;border-bottom:0}
+.frame i::before{bottom:0;left:0;border-right:0;border-top:0}.frame i::after{bottom:0;right:0;border-left:0;border-top:0}
+.frame svg{width:min(100%,190px);height:auto;display:block}
+.hearts{display:flex;gap:6px;justify-content:center;margin-top:12px}
+.hearts svg{width:22px;height:20px;fill:var(--ink)}
+section{padding:52px 0;border-top:2px dashed var(--line)}
+section h2{font-family:var(--hd);font-size:clamp(1.3rem,3.5vw,2rem);margin:12px 0 8px;line-height:1.2;text-transform:uppercase}
+.lead{color:var(--muted);max-width:620px;margin:0 0 26px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{background:var(--card);border:2px solid var(--ink);padding:20px;text-decoration:none;display:flex;flex-direction:column;align-items:flex-start;position:relative;transition:background .15s,color .15s}
+a.card:hover{background:var(--ink);color:var(--on)}
+a.card:hover .num,a.card:hover .meta{color:var(--on);border-color:var(--on)}
+.num{display:inline-block;border:1.5px solid var(--ink);padding:0 8px;font-size:.78rem;letter-spacing:.08em}
+.card h3{font-family:var(--hd);font-size:1rem;margin:12px 0 6px;text-transform:uppercase}
+.card p{margin:0 0 20px;color:inherit;opacity:.8;font-size:.92rem}
+.meta{display:inline-block;margin-top:auto;font-size:.7rem;letter-spacing:.1em;border:1.5px solid var(--ink);border-radius:999px;padding:1px 10px}
+.note{font-size:.82rem;color:var(--muted);margin-top:20px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:20px}
+.two ul{padding-left:18px;margin:8px 0 0;opacity:.85}
+footer{border-top:2px solid var(--ink);padding:30px 0;color:var(--muted);font-size:.85rem;background:var(--bg)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+footer .hearts{margin:0}
+@media(max-width:700px){.hero{grid-template-columns:1fr}}
+#gate{position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:20px;overflow:auto;
+background-image:repeating-radial-gradient(circle at 50% 42%,transparent 0 58px,var(--line) 59px 60px)}
+#gate[hidden],#pnl[hidden],#adm[hidden]{display:none}
+.gbox{max-width:400px;width:100%;text-align:center}
+.gbox h2{font-family:var(--hd);font-size:clamp(1.8rem,8vw,2.6rem);margin:0 0 14px;text-transform:uppercase;letter-spacing:.06em}
+.gbox .frame{margin:0 auto 14px;max-width:260px;background:none}
+.gbox p{color:var(--muted);font-size:.85rem;margin:6px 0 10px}
+.gbox label{display:block;text-align:left;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;margin:10px 0 4px}
+.gbox input{width:100%;padding:10px 12px;border:2px solid var(--ink);background:var(--card);color:var(--ink);font:1rem var(--mono)}
+.gbox button,#adm,.pbox button{padding:11px 20px;border:2px solid var(--ink);background:var(--ink);color:var(--on);font:.9rem var(--mono);text-transform:uppercase;letter-spacing:.1em;cursor:pointer}
+.gbox button{width:100%;margin-top:16px;border-radius:999px}
+.gbox button:hover{background:transparent;color:var(--ink)}
+.bar{height:10px;border:2px solid var(--ink);border-radius:999px;margin:0 auto 12px;max-width:170px;overflow:hidden}
+.bar b{display:block;height:100%;width:60%;background:var(--ink)}
+#gmsg{min-height:1.2em;font-size:.8rem;margin-top:8px}
+.hi{display:flex;margin-top:14px;border:2px solid var(--ink);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase}
+.hi span{padding:3px 10px}.hi span:last-child{flex:1;background:var(--ink);color:var(--on);text-align:right}
+#adm{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40}
+#pnl{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:16px}
+.pbox{background:var(--bg);border:2px solid var(--ink);padding:20px;max-width:720px;width:100%;max-height:80vh;display:flex;flex-direction:column;gap:12px}
+.pbox .acts{display:flex;gap:8px;justify-content:flex-end}
+#pb{overflow:auto;font-size:.85rem}#pb table{width:100%;border-collapse:collapse}
+#pb td,#pb th{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<linearGradient id="gg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a4a4a"/><stop offset="1" stop-color="#d4d4d4"/></linearGradient>
+<symbol id="cat" viewBox="0 0 200 230"><path d="M30 70 L48 22 L72 52 Q100 44 128 52 L152 22 L170 70 V196 Q155 176 140 196 Q125 176 110 196 Q95 176 80 196 Q65 176 50 196 Q38 180 30 196 Z" fill="url(#gg)" stroke="var(--ink)" stroke-width="2" stroke-dasharray="5 4"/><path d="M52 40 L60 56 L46 58 Z M148 40 L140 56 L154 58 Z" fill="#fff"/><rect x="48" y="78" width="104" height="72" rx="32" fill="#111"/><rect x="70" y="100" width="13" height="28" rx="6.5" fill="#fff"/><rect x="117" y="100" width="13" height="28" rx="6.5" fill="#fff"/><path d="M95 116h10l-5 7z" fill="#fff"/></symbol>
+<symbol id="logo" viewBox="0 0 120 100"><g style="fill:var(--ink)"><path d="M14 6Q60 36 106 6V92H14Z"/><rect x="6" y="90" width="108" height="8" rx="4"/></g><rect x="24" y="42" width="72" height="40" rx="3" style="fill:var(--bg)"/><path d="M44 54l8 6-8 6M58 68h14" style="stroke:var(--ink);fill:none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="hrt" viewBox="0 0 7 6"><path d="M1 0h2v1h1V0h2v1h1v2H6v1H5v1H4v1H3V5H2V4H1V3H0V1h1z"/></symbol>
+</defs></svg>
+
+<div id="gate"><div class="gbox">
+<span class="pill">Player 1 ready</span>
+<h2 style="margin-top:12px">tec - future</h2>
+<div class="frame"><svg viewBox="0 0 200 230" role="img" aria-label="Mascote"><use href="#cat"/></svg><i></i></div>
+<div class="bar"><b></b></div>
+<p>Informe seu nome e e-mail para acessar. Os dados servem apenas para registrar a participação no projeto de extensão.</p>
+<label for="gn">Nome</label><input id="gn" autocomplete="name" maxlength="80">
+<label for="ge">E-mail</label><input id="ge" type="email" autocomplete="email" maxlength="120">
+<button id="gb" type="button">Insert coin ▸</button><div id="gmsg"></div>
+<div class="hearts"><svg><use href="#hrt"/></svg><svg><use href="#hrt"/></svg><svg><use href="#hrt"/></svg><svg style="opacity:.25"><use href="#hrt"/></svg></div>
+<div class="hi"><span>Hi score</span><span>Novo jogador</span></div>
+</div></div>
+
+<header id="inicio"><nav>
+<a class="logo" href="#inicio" aria-label="tec - future"><svg viewBox="0 0 120 100"><use href="#logo"/></svg></a>
+<div class="links"><a href="#caminhos">Caminhos</a><a href="#cursos">Cursos</a><a href="#comunidades">Comunidades</a><a href="#leituras">Leituras</a></div>
+</nav></header>
+
+<main class="wrap">
+<div class="hero">
+<div>
+<span class="pill">Projeto de extensão · Guia de caminhos</span>
+<h1>O futuro da tecnologia começa com você.</h1>
+<p>Um espaço para descobrir caminhos, cursos gratuitos, comunidades e leituras que ajudam mais pessoas a entrar, permanecer e crescer na área de tecnologia.</p>
+<a class="btn" href="#caminhos">Comece por aqui →</a>
+</div>
+<div><div class="frame"><svg viewBox="0 0 200 230" role="img" aria-label="Mascote"><use href="#cat"/></svg><i></i></div>
+<div class="hearts"><svg><use href="#hrt"/></svg><svg><use href="#hrt"/></svg><svg><use href="#hrt"/></svg><svg style="opacity:.25"><use href="#hrt"/></svg></div></div>
+</div>
+
+<section id="caminhos">
+<span class="pill">01 / Caminhos ★</span>
+<h2>O futuro também pertence a quem está começando.</h2>
+<p class="lead">Tecnologia combina habilidades técnicas e humanas. Experimentar, conversar e praticar ajudam a transformar curiosidade em carreira.</p>
+<div class="grid">
+<div class="card"><span class="num">01</span><h3>Descobrir</h3><p>Explore as diferentes áreas da tecnologia e encontre aquela que mais desperta sua curiosidade. Toda jornada começa com uma descoberta.</p></div>
+<div class="card"><span class="num">02</span><h3>Aprender</h3><p>Aprenda lógica de programação e escolha uma linguagem para seu desenvolvimento inicial, desenvolva novas habilidades por meio de cursos, materiais gratuitos e experiências práticas. Respeite seu próprio ritmo.</p></div>
+<div class="card"><span class="num">03</span><h3>Desenvolver</h3><p>Transforme conhecimento em projetos reais. Experimente, erre, aprenda e descubra o que você é capaz de criar.</p></div>
+</div>
+<div class="two">
+<div class="card"><h3>O que você precisa para começar</h3><ul><li>Curiosidade e disposição para aprender.</li><li>Acesso a materiais e ferramentas gratuitas.</li><li>Prática constante, mesmo que em pequenos passos.</li><li>Contato com comunidades e pessoas da área.</li><li>Entender que não é necessário saber tudo para começar.</li></ul></div>
+<div class="card"><h3>Por que a tecnologia importa</h3><p>A tecnologia está presente em diferentes aspectos da sociedade. Aprender sobre ela significa ampliar possibilidades, desenvolver soluções e participar ativamente da construção do futuro.</p></div>
+</div>
+</section>
+
+<section id="cursos">
+<span class="pill">02 / Aprender</span>
+<h2>Conteúdo de aprendizado</h2>
+<p class="lead">Recomendação de cursos para começar sua jornada.</p>
+<div class="grid">
+<a class="card" href="https://www.udemy.com/course/curso-algoritmos-logica-de-programacao/" target="_blank" rel="noopener"><span class="num">01</span><h3>Udemy</h3><p>O curso definitivo de Lógica de Programação. Do VisuAlg às principais linguagens do mercado: C, C++, Python, C# e Java.</p><span class="meta">CURSO · ONLINE ↗</span></a>
+<a class="card" href="https://www.cursoemvideo.com/" target="_blank" rel="noopener"><span class="num">02</span><h3>Curso em Vídeo</h3><p>Videoaulas de lógica, Python, HTML, JavaScript e mais.</p><span class="meta">GRATUITO · VÍDEO ↗</span></a>
+<a class="card" href="https://www.dio.me/" target="_blank" rel="noopener"><span class="num">03</span><h3>DIO</h3><p>Cursos e bootcamps; veja quais estão com vagas gratuitas.</p><span class="meta">CURSOS · BOOTCAMPS ↗</span></a>
+<a class="card" href="https://www.freecodecamp.org/portuguese/" target="_blank" rel="noopener"><span class="num">04</span><h3>freeCodeCamp</h3><p>Trilhas práticas de programação com projetos, em português.</p><span class="meta">GRATUITO · PRÁTICA ↗</span></a>
+</div>
+<p class="note">Condições, certificados e inscrições mudam. Confirme sempre no site de cada plataforma.</p>
+</section>
+
+<section id="comunidades">
+<span class="pill">03 / Conectar</span>
+<h2>Comunidades e redes de apoio</h2>
+<p class="lead">Ninguém precisa aprender sozinha. Estas iniciativas reúnem mulheres na tecnologia.</p>
+<div class="grid">
+<a class="card" href="https://www.programaria.org/" target="_blank" rel="noopener"><span class="num">01</span><h3>PrograMaria</h3><p>Cursos e conteúdos para mulheres que querem entrar na área.</p><span class="meta">CONHECER ↗</span></a>
+<a class="card" href="https://www.juninhos.com/" target="_blank" rel="noopener"><span class="num">02</span><h3>Juninhos</h3><p>Aulas, projetos e ciclo de mentoria.</p><span class="meta">CONHECER ↗</span></a>
+<a class="card" href="https://heartdevs.com/" target="_blank" rel="noopener"><span class="num">03</span><h3>HeartDevs</h3><p>Projetos, mentorias e networking.</p><span class="meta">CONHECER ↗</span></a>
+<a class="card" href="https://reprograma.com.br/" target="_blank" rel="noopener"><span class="num">04</span><h3>{reprograma}</h3><p>Formação em programação para mulheres; acompanhe os processos seletivos.</p><span class="meta">VER VAGAS ↗</span></a>
+</div>
+</section>
+
+<section id="leituras">
+<span class="pill">04 / Entender</span>
+<h2>Leituras e pesquisas</h2>
+<p class="lead">Artigos e estudos selecionados para embasar e aprofundar os seus estudos em tecnologia.</p>
+<div class="grid">
+<a class="card" href="https://www.freecodecamp.org/portuguese/news/como-programar-programacao-para-iniciantes-e-como-aprender-a-programar-gratuitamente/" target="_blank" rel="noopener"><span class="num">01</span><h3>Como programar: programação para iniciantes</h3><p>Explica o que é escrever código, como começar e quais recursos gratuitos utilizar.</p><span class="meta">ARTIGO ↗</span></a>
+<a class="card" href="https://blog.devclub.com.br/" target="_blank" rel="noopener"><span class="num">02</span><h3>Lógica de programação: o guia para começar do zero</h3><p>Apresenta algoritmos, variáveis, operadores, condições e estruturas de repetição.</p><span class="meta">ARTIGO ↗</span></a>
+<a class="card" href="https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Getting_started/Your_first_website" target="_blank" rel="noopener"><span class="num">03</span><h3>Introdução à Web</h3><p>Ensina como funciona a criação de sites e apresenta os primeiros passos práticos.</p><span class="meta">ARTIGO ↗</span></a>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap"><span><strong>tec - future</strong> — Projeto de extensão</span><div class="hearts"><svg><use href="#hrt"/></svg><svg><use href="#hrt"/></svg><svg><use href="#hrt"/></svg></div><a href="#inicio">Voltar ao topo ↑</a></div></footer>
+
+<button id="adm" type="button" hidden>Ver visitantes</button>
+<div id="pnl" hidden><div class="pbox"><strong>Lista de visitantes</strong><div id="pb"></div><div class="acts"><button id="pd" type="button">Baixar CSV</button><button id="pc" type="button">Fechar</button></div></div></div>
+<script>
+(function(){var KEY='tf_visitante',gate=document.getElementById('gate'),msg=document.getElementById('gmsg'),Q=String.fromCharCode(34);
+function seen(){try{return localStorage.getItem(KEY)}catch(e){return null}}
+function cl(n){try{return window.claude&&claude.use?claude.use(n).catch(function(){return null}):Promise.resolve(null)}catch(e){return Promise.resolve(null)}}
+function fechar(){gate.hidden=true;document.body.style.overflow=''}
+if(seen())fechar();else document.body.style.overflow='hidden';
+document.getElementById('gb').onclick=async function(){
+var n=document.getElementById('gn').value.trim(),e=document.getElementById('ge').value.trim();
+if(n.length<2){msg.textContent='Digite seu nome.';return}
+if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e)){msg.textContent='Digite um e-mail válido.';return}
+msg.textContent='Registrando...';
+try{var db=await cl('db'),u=await cl('user');if(db&&u){var id=await u.id();await db.collection('visitantes').doc(id).set({nome:n,email:e,data:new Date().toISOString()})}}catch(x){}
+try{localStorage.setItem(KEY,n)}catch(x){}
+fechar()};
+cl('user').then(async function(u){
+if(!u||!(await u.isOwner()))return;var db=await cl('db');if(!db)return;
+var btn=document.getElementById('adm'),pnl=document.getElementById('pnl'),pb=document.getElementById('pb'),rows=[];
+btn.hidden=false;
+btn.onclick=async function(){pnl.hidden=false;pb.textContent='Carregando...';
+try{var s=await db.collection('visitantes').get();
+rows=s.docs.map(function(d){return d.data()}).sort(function(a,b){return String(b.data).localeCompare(String(a.data))});
+pb.textContent='';if(!rows.length){pb.textContent='Ainda não há visitantes registrados.';return}
+var t=document.createElement('table'),h=t.insertRow();
+['Nome','E-mail','Data'].forEach(function(x){var c=document.createElement('th');c.textContent=x;h.appendChild(c)});
+rows.forEach(function(r){var tr=t.insertRow();[r.nome,r.email,new Date(r.data).toLocaleString('pt-BR')].forEach(function(v){tr.insertCell().textContent=v==null?'':String(v)})});
+pb.appendChild(t)}catch(x){pb.textContent='Não foi possível carregar a lista.'}};
+document.getElementById('pc').onclick=function(){pnl.hidden=true};
+document.getElementById('pd').onclick=async function(){var d=await cl('downloads');if(!d)return;
+function q(v){return Q+String(v==null?'':v).split(Q).join(Q+Q)+Q}
+var csv='\ufeffNome,E-mail,Data\n'+rows.map(function(r){return [q(r.nome),q(r.email),q(r.data)].join(',')}).join('\n');
+try{await d.save({filename:'visitantes.csv',data:csv})}catch(x){}}
+});
+})();
+</script>
+</body>
+</html>
